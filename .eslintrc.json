@@ -33,6 +33,7 @@
       ],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "import/no-mutable-exports": "off",
+    "import/prefer-default-export": "off",
     //"@typescript-eslint/interface-name-prefix": ["error", {"prefixWithI": "always"}], not working
     "@typescript-eslint/no-unused-vars": ["error", {
         "argsIgnorePattern": "_"
