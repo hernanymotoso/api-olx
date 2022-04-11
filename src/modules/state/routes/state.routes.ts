@@ -1,9 +1,9 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import StateController from '../controllers/StateController';
 
 const stateRoutes = Router();
+const stateController = new StateController();
 
-stateRoutes.get('/', (request: Request, response: Response) => {
-  response.json({ ok: 'State Routes' });
-});
+stateRoutes.get('/', stateController.List);
 
 export default stateRoutes;

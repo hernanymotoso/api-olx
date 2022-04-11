@@ -1,23 +1,28 @@
-import mongoose, { Schema, Model } from 'mongoose';
+import mongoose, { Schema, Model, Document } from 'mongoose';
 
 mongoose.Promise = global.Promise;
 
-interface IStateSchema {
+export interface IState extends Document {
   name: string;
 }
 
-const modelSchema = new Schema<IStateSchema>({
-  name: { type: String, required: true },
-});
+const modelSchema = new Schema<IState>(
+  {
+    name: { type: String, required: true },
+  },
+  {
+    timestamps: true,
+  },
+);
 
 const modelName = 'State';
 
-let State: Model<IStateSchema> = {} as Model<IStateSchema>;
+let State: Model<IState> = {} as Model<IState>;
 
 if (mongoose.connection && mongoose.connection.models[modelName]) {
   State = mongoose.connection.models[modelName];
 } else {
-  State = mongoose.model<IStateSchema>(modelName, modelSchema);
+  State = mongoose.model<IState>(modelName, modelSchema);
 }
 
 export default State;

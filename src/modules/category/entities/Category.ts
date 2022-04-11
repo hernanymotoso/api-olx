@@ -7,10 +7,15 @@ interface ICategorySchema {
   slug: string;
 }
 
-const modelSchema = new Schema<ICategorySchema>({
-  name: { type: String, required: true },
-  slug: String,
-});
+const modelSchema = new Schema<ICategorySchema>(
+  {
+    name: { type: String, required: true },
+    slug: String,
+  },
+  {
+    timestamps: true,
+  },
+);
 
 const modelName = 'Category';
 

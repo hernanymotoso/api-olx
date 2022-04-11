@@ -10,13 +10,18 @@ interface IUserSchema {
   token: string;
 }
 
-const modelSchema = new Schema<IUserSchema>({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  state: String,
-  passwordHash: String,
-  token: String,
-});
+const modelSchema = new Schema<IUserSchema>(
+  {
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    state: String,
+    passwordHash: String,
+    token: String,
+  },
+  {
+    timestamps: true,
+  },
+);
 
 const modelName = 'User';
 

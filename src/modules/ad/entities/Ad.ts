@@ -20,19 +20,24 @@ interface IAdSchema {
   status: string;
 }
 
-const modelSchema = new Schema<IAdSchema>({
-  idUser: { type: String, required: true },
-  state: String,
-  category: String,
-  images: [Object],
-  dateCreated: Date,
-  title: String,
-  price: Number,
-  priceNegotiable: Boolean,
-  description: String,
-  views: Number,
-  status: String,
-});
+const modelSchema = new Schema<IAdSchema>(
+  {
+    idUser: { type: String, required: true },
+    state: String,
+    category: String,
+    images: [Object],
+    dateCreated: Date,
+    title: String,
+    price: Number,
+    priceNegotiable: Boolean,
+    description: String,
+    views: Number,
+    status: String,
+  },
+  {
+    timestamps: true,
+  },
+);
 
 const modelName = 'Ad';
 
