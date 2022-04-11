@@ -4,7 +4,7 @@ users
 - email
 - state
 - passwordHash
-- token
+- token - tirar
 
 states
 - _id
