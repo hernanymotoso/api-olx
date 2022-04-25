@@ -17,10 +17,10 @@ interface IResponse {
 class CreateUserSessionService {
   public async execute({ email, password }: IRequest): Promise<IResponse> {
     const user = await User.findOne({ email });
-
     if (!user) {
       throw new AppError('Incorrect email/password conbination');
     }
+
     const passwordMatched = await compare(password, user.passwordHash);
     if (!passwordMatched) {
       throw new AppError('Incorrect email/password conbination', 401);

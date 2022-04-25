@@ -3,7 +3,7 @@ import { validationResult, matchedData } from 'express-validator';
 import CreateUserService from '../services/CreateUserService';
 import { IUser } from '../entities/User';
 
-class CreateUserController {
+class UserController {
   public async execute(request: Request, response: Response) {
     try {
       const errors = validationResult(request);
@@ -25,4 +25,4 @@ class CreateUserController {
   }
 }
 
-export default new CreateUserController();
+export default new UserController();
