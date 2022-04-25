@@ -5,6 +5,7 @@ import categoryRoutes from '../../modules/category/routes/category.routes';
 import stateRoutes from '../../modules/state/routes/state.routes';
 import userRoutes from '../../modules/user/routes/user.routes';
 import sessionRoutes from '../../modules/user/routes/session.routes';
+import profileRoutes from '../../modules/user/routes/profile.routes';
 
 const routes = Router();
 
@@ -13,5 +14,6 @@ routes.use('/categories', categoryRoutes);
 routes.use('/states', stateRoutes);
 routes.use('/user', userRoutes);
 routes.use('/session', sessionRoutes);
+routes.use('/profile', profileRoutes);
 
 export default routes;
