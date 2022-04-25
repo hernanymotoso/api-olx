@@ -16,9 +16,7 @@ interface IResponse {
 
 class CreateUserSessionService {
   public async execute({ email, password }: IRequest): Promise<IResponse> {
-    const user = await User.findOne({ where: { email } });
-
-    console.log('CREATESESSION  user=', user);
+    const user = await User.findOne({ email });
 
     if (!user) {
       throw new AppError('Incorrect email/password conbination');

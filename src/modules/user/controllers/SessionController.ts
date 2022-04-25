@@ -13,7 +13,7 @@ class SessionController {
       const data = matchedData(request);
       const session = await createUserSessionService.execute({
         email: data.email as string,
-        password: data.password as string,
+        password: data.password,
       });
 
       console.log('MATCHED data=');
